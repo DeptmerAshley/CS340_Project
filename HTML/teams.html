@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SCHEDULE TOOL</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script>
+    function toggleForm() {
+      var form = document.getElementById("updateForm");
+      if (form.style.display === "none") {
+        form.style.display = "block";
+      } else {
+        form.style.display = "none";
+      }
+    }
+  </script>
+</head>
+
+<body>
+<h1>YOUTH BASKETBALL SCHEDULE MANAGEMENT</h1>
+
+<nav>
+  <a href="index.html">HOME</a> |
+  <a href="coaches.html">COACHES</a> |
+  <a href="teams.html">TEAMS</a> |
+  <a href="players.html">PLAYERS</a> |
+  <a href="games.html">GAMES</a> |
+  <a href="gyms.html">GYMS</a>
+</nav>
+
+<h2>TEAMS PAGE</h2>
+<p>The teams page gives the user the ability to view all the teams in the league.
+The user may also use this page to add a new team to the league database. Each
+team that is added to the database must have a coach assigned.</p>
+
+<table>
+  <tr>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>ID</th>
+    <th>Team Name</th>
+    <th>Color</th>
+    <th>Coach ID</th>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>1</td>
+    <td>Tigers</td>
+    <td>Orange</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>2</td>
+    <td>Panthers</td>
+    <td>Blue</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>3</td>
+    <td>Eagles</td>
+    <td>Green</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>4</td>
+    <td>Bulldogs</td>
+    <td>Red</td>
+    <td>1</td>
+  </tr>
+</table>
+
+<a class="droppy" href="javascript:void(0);" onclick="toggleForm()">
+  <div class="dropdown-style">
+    <h3>FORM TO ADD A NEW TEAM</h3>
+  </div>
+</a>
+<div id="updateForm" class="dropdown-form">
+  <form action="" method="post">
+    <label for="team_name">Team Name:</label>
+    <input type="text" id="team_name" name="team_name" required><br>
+
+    <label for="color">Team Color:</label>
+    <input type="text" id="color" name="color" required><br>
+
+    <label for="coach_id">Coach ID:</label>
+    <input type="text" id="coach_id" name="coach_id" required><br>
+
+    <input type="submit" value="Add Team">
+  </form>
+</div>
+
+</body>
+</html>

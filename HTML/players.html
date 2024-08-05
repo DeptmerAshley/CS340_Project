@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SCHEDULE TOOL</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script>
+    function toggleForm() {
+      var form = document.getElementById("updateForm");
+      if (form.style.display === "none") {
+        form.style.display = "block";
+      } else {
+        form.style.display = "none";
+      }
+    }
+    function toggleForm2() {
+      var form = document.getElementById("updateForm-2");
+      if (form.style.display === "none") {
+        form.style.display = "block";
+      } else {
+        form.style.display = "none";
+      }
+    }
+  </script>
+</head>
+
+<body>
+<h1>YOUTH BASKETBALL SCHEDULE MANAGEMENT</h1>
+
+<nav>
+  <a href="index.html">HOME</a> |
+  <a href="coaches.html">COACHES</a> |
+  <a href="teams.html">TEAMS</a> |
+  <a href="players.html">PLAYERS</a> |
+  <a href="games.html">GAMES</a> |
+  <a href="gyms.html">GYMS</a>
+</nav>
+
+<h2>PLAYERS PAGE</h2>
+<p>The players page allows the user to view all players in the league and add
+a new player to the league. Each player that is added to the league must be
+added to a team. The player information that is recorded when adding a player
+it the player name, email, birthday, and team they play for. The players page
+also contains the delete option. The user may select a player from a dropdown
+menu and delete that player from the database.</p>
+
+<h3>TABLE FOR ALL PLAYERS</h3>
+<table>
+  <tr>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>Player ID</th>
+    <th>Name</th>
+    <th>Birthday</th>
+    <th>Team</th>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>1</td>
+    <td>Max Jenkins</td>
+    <td>2002-02-04</td>
+    <td>Tigers</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>2</td>
+    <td>Jade Phillips</td>
+    <td>2002-06-10</td>
+    <td>Tigers</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>3</td>
+    <td>Sana Phelps</td>
+    <td>2001-11-18</td>
+    <td>Tigers</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>4</td>
+    <td>Jerry Davis</td>
+    <td>2003-01-24</td>
+    <td>Tigers</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>5</td>
+    <td>Jan Park</td>
+    <td>2001-12-14</td>
+    <td>Panthers</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>6</td>
+    <td>Tim Landry</td>
+    <td>2002-08-01</td>
+    <td>Panthers</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>7</td>
+    <td>Cordell Roberts</td>
+    <td>2003-02-01</td>
+    <td>Panthers</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>8</td>
+    <td>Nana Kelley</td>
+    <td>2002-04-22</td>
+    <td>Eagles</td>
+  </tr>
+</table>
+
+<a class="droppy" href="javascript:void(0);" onclick="toggleForm()">
+  <div class="dropdown-style">
+    <h3>FORM TO ADD A NEW PlAYER</h3>
+  </div>
+</a>
+<div id="updateForm" class="dropdown-form">
+  <form action="" method="post">
+    <label for="player_name">Player Name:</label>
+    <input type="text" id="player_name" name="player_name" required><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday" required><br>
+    <label for="team">Team:</label>
+    <select id="team" name="team" required>
+      <option value="1">Tigers</option>
+      <option value="2">Panthers</option>
+      <option value="3">Eagles</option>
+    </select><br>
+    <input type="submit" value="Add Player">
+  </form>
+</div>
+<br>
+<a class="droppy" href="javascript:void(0);" onclick="toggleForm2()">
+  <div class="dropdown-style">
+    <h3>FORM TO DELETE AN EXISTING PlAYER</h3>
+  </div>
+</a>
+<div id="updateForm-2" class="dropdown-form">
+  <form action="" method="post">
+    <label for="player_id">Player:</label>
+    <select id="player_id" name="player_id" required>
+      <option value="1">Max Jenkins</option>
+      <option value="2">Jade Phillips</option>
+      <option value="3">Sana Phelps</option>
+      <option value="4">Jerry Davis</option>
+      <option value="5">Jan Park</option>
+      <option value="6">Tim Landry</option>
+      <option value="7">Cordell Roberts</option>
+      <option value="8">Nana Kelley</option>
+    </select><br>
+    <input type="submit" value="Delete Player">
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SCHEDULE TOOL</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script>
+    function toggleForm() {
+      var form = document.getElementById("updateForm");
+      if (form.style.display === "none") {
+        form.style.display = "block";
+      } else {
+        form.style.display = "none";
+      }
+    }
+    function toggleForm2() {
+      var form = document.getElementById("updateForm-2");
+      if (form.style.display === "none") {
+        form.style.display = "block";
+      } else {
+        form.style.display = "none";
+      }
+    }
+  </script>
+</head>
+
+<body>
+<h1>YOUTH BASKETBALL SCHEDULE MANAGEMENT</h1>
+
+<nav>
+  <a href="index.html">HOME</a> |
+  <a href="coaches.html">COACHES</a> |
+  <a href="teams.html">TEAMS</a> |
+  <a href="players.html">PLAYERS</a> |
+  <a href="games.html">GAMES</a> |
+  <a href="gyms.html">GYMS</a>
+</nav>
+
+<h2>GAMES PAGE</h2>
+<p>The games page is the page that shows all the games in the league. This page
+shows each game, the gym the game is played at, the day of the game, and the teams
+in each game. The user may also add a new game to the database from this page.
+This page shows the update functionality where a user may update
+the date or gym location for a game in the database.</p>
+<p>Lastly, this page contains the delete function for the M:M intersection table.
+The intersection table here is the intersection of teams and games (each team
+plays in multiple games, and each game has multiple teams). This page contains a
+form to delete a team from a game, thus disassociateing that team from a game.</p>
+
+<a class="droppy" href="javascript:void(0);" onclick="toggleForm()">
+  <div class="dropdown-style">
+  <h3>Update Game</h3>
+  </div>
+</a>
+  <div id="updateForm" class="dropdown-form">
+  <form action="" method="post">
+    <label for="update_game_id">Game ID:</label>
+    <input type="text" id="update_game_id" name="update_game_id" required><br>
+
+    <label for="update_team1_id">Team 1 ID:</label>
+    <input type="text" id="update_team1_id" name="update_team1_id" required><br>
+
+    <label for="update_team2_id">Team 2 ID:</label>
+    <input type="text" id="update_team2_id" name="update_team2_id" required><br>
+
+    <label for="update_game_date">Game Date (YYYY-MM-DD):</label>
+    <input type="text" id="update_game_date" name="update_game_date" required><br>
+
+    <label for="update_location">Location:</label>
+    <input type="text" id="update_location" name="update_location" required><br>
+
+    <input type="submit" value="Update Game">
+  </form>
+</div>
+
+<table>
+  <tr>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>ID</th>
+    <th>Team 1 ID</th>
+    <th>Team 2 ID</th>
+    <th>Game Date</th>
+    <th>Location</th>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>1</td>
+    <td>1</td>
+    <td>2</td>
+    <td>2023-07-25</td>
+    <td>Gym A</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>2023-07-26</td>
+    <td>Gym B</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>3</td>
+    <td>1</td>
+    <td>3</td>
+    <td>2023-07-27</td>
+    <td>Gym C</td>
+  </tr>
+</table>
+
+
+<a class="droppy" href="javascript:void(0);" onclick="toggleForm2()">
+  <div class="dropdown-style">
+  <h3>FORM TO ADD A NEW GAME</h3>
+  </div>
+</a>
+<div id="updateForm-2" class="dropdown-form">
+  <form action="" method="post">
+    <label for="team1_id">Team 1 ID:</label>
+    <input type="text" id="team1_id" name="team1_id" required><br>
+
+    <label for="team2_id">Team 2 ID:</label>
+    <input type="text" id="team2_id" name="team2_id" required><br>
+
+    <label for="game_date">Game Date (YYYY-MM-DD):</label>
+    <input type="text" id="game_date" name="game_date" required><br>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" required><br>
+
+    <input type="submit" value="Add Game">
+  </form>
+</div>
+
+</body>
+</html>

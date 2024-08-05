@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SCHEDULE TOOL</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script>
+    function toggleForm() {
+      var form = document.getElementById("updateForm");
+      if (form.style.display === "none") {
+        form.style.display = "block";
+      } else {
+        form.style.display = "none";
+      }
+    }
+  </script>
+</head>
+
+<body>
+<h1>YOUTH BASKETBALL SCHEDULE MANAGEMENT</h1>
+
+<nav>
+  <a href="index.html">HOME</a> |
+  <a href="coaches.html">COACHES</a> |
+  <a href="teams.html">TEAMS</a> |
+  <a href="players.html">PLAYERS</a> |
+  <a href="games.html">GAMES</a> |
+  <a href="gyms.html">GYMS</a>
+</nav>
+
+<div>
+  <h2>COACHES PAGE</h2>
+  <p>This page allows the user to view all coaches in the league. The user may
+  also use this page to add a new coach to the database management sytsem. Each
+  coach may coach for more than one team.</p>
+</div>
+
+<table>
+  <tr>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Training Complete</th>
+  </tr>
+  <tr>
+    <td><a href="">Edit</a></td>
+    <td><a href="">Delete</a></td>
+    <td>1</td>
+    <td>Jessie Harrison</td>
+    <td>jessieharrison@team.com</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><a href="">Edit</a></td>
+    <td><a href="">Delete</a></td>
+    <td>2</td>
+    <td>Kelly Garner</td>
+    <td>kellygarner@hotmail.com</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td><a href="">Edit</a></td>
+    <td><a href="">Delete</a></td>
+    <td>3</td>
+    <td>Kaden Reid</td>
+    <td>kadenreid@gmail.com</td>
+    <td>1</td>
+  </tr>
+</table>
+
+<a class="droppy" href="javascript:void(0);" onclick="toggleForm()">
+  <div class="dropdown-style">
+    <h3>FORM TO ADD A NEW COACH</h3>
+  </div>
+</a>
+<div id="updateForm" class="dropdown-form">
+  <form action="" method="post">
+    <label for="name">Coach Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Coach Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="training">Training Complete:</label><br>
+    <input type="radio" id="Yes" name="training" required>
+    <label for="Yes">Yes (1)</label><br>
+    <input type="radio" id="No" name="training" required>
+    <label for="No">No (0)</label><br>
+
+    <input type="submit" value="Add Coach">
+  </form>
+</div>
+
+
+</body>
+</html>

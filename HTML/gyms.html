@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SCHEDULE TOOL</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script>
+    function toggleForm() {
+      var form = document.getElementById("updateForm");
+      if (form.style.display === "none") {
+        form.style.display = "block";
+      } else {
+        form.style.display = "none";
+      }
+    }
+  </script>
+</head>
+
+<body>
+<h1>YOUTH BASKETBALL SCHEDULE MANAGEMENT</h1>
+
+<nav>
+  <a href="index.html">HOME</a> |
+  <a href="coaches.html">COACHES</a> |
+  <a href="teams.html">TEAMS</a> |
+  <a href="players.html">PLAYERS</a> |
+  <a href="games.html">GAMES</a> |
+  <a href="gyms.html">GYMS</a>
+</nav>
+
+<h2>GYMS PAGE</h2>
+<p>Simple page that allows the user to view all the gyms in the database. The
+gyms are the locations where the games take place. The user may also add a new
+gym to the database from this page.</p>
+
+<table>
+  <tr>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>GymID</th>
+    <th>Gym Name</th>
+    <th>Regulation Size</th>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>1</td>
+    <td>Southport Fieldhouse</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>2</td>
+    <td>Kalama Gym</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td><a href=''>Edit</a></td>
+    <td><a href=''>Delete</a></td>
+    <td>3</td>
+    <td>Allen Center</td>
+    <td>Yes</td>
+  </tr>
+</table>
+
+<a class="droppy" href="javascript:void(0);" onclick="toggleForm()">
+  <div class="dropdown-style">
+    <h3>FORM TO ADD A NEW GYM</h3>
+  </div>
+</a>
+<div id="updateForm" class="dropdown-form">
+  <form action="" method="post">
+    <label for="gym_name">Gym Name:</label>
+    <input type="text" id="gym_name" name="gym_name" required><br>
+    <label for="regulation_size">Regulation Size:</label>
+    <input type="checkbox" id="regulation_size" name="regulation_size" value="1"><br>
+    <input type="submit" value="Add Gym">
+  </form>
+</div>
+
+</body>
+</html>
