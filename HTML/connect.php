@@ -1,7 +1,7 @@
 <?php
 $servername = "classmysql.engr.oregonstate.edu";
 $username = "cs340_ashledep";
-$password = "3889";
+$password = "2117";
 $dbname = "cs340_ashledep";
 
 // Create connection
@@ -28,5 +28,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
-
-<a href="coaches.html">Back to Coaches Page</a>
