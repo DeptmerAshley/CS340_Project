@@ -8,9 +8,9 @@ addCoachForm.addEventListener("submit", function (e) {
     let inputEmail = document.getElementById("input-email");
     let inputTraining = document.getElementById("input-training");
 
-    let nameValue = inputname.value;
-    let emailValue = inputemail.value;
-    let trainingValue = inputtraining.value;
+    let nameValue = inputName.value;
+    let emailValue = inputEmail.value;
+    let trainingValue = inputTraining.value;
 
     let data = {
         name: nameValue,
@@ -42,10 +42,12 @@ addCoachForm.addEventListener("submit", function (e) {
     xhttp.send(JSON.stringify(data));
 
 })
+
+
 addRowToTable = (data) => {
 
     // Get a reference to the current table on the page and clear it out.
-    let currentTable = document.getElementById("coach-table");
+    let currentTable = document.getElementById("coaches-table");
 
     // Get the location where we should insert the new row (end of table)
     let newRowIndex = currentTable.rows.length;
@@ -60,15 +62,26 @@ addRowToTable = (data) => {
     let emailCell = document.createElement("TD");
     let trainingCell = document.createElement("TD");
 
-    idCell.innerText = newRow.id;
+    let deleteCell = document.createElement("TD");
+
+    idCell.innerText = newRow.coachID;
     nameCell.innerText = newRow.name;
     emailCell.innerText = newRow.email;
     trainingCell.innerText = newRow.training;
+
+    deleteCell = document.createElement("button");
+    deleteCell.innerHTML = "Delete";
+    deleteCell.onclick = function(){
+        deleteCoach(newRow.id);
+    };
 
     row.appendChild(idCell);
     row.appendChild(nameCell);
     row.appendChild(emailCell);
     row.appendChild(trainingCell);
+    row.appendChild(deleteCell);
+
+    row.setAttribute('data-value', newRow.coachID);
     
     // Add the row to the table
     currentTable.appendChild(row);
